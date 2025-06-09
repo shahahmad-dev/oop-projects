@@ -1,0 +1,104 @@
+class Student():
+
+    collage_name  = 'apna collage' # class attribute it's same for everone student
+    name = 'anonymous'
+
+    def __init__(self): # Default constructore
+        pass
+    
+    def __init__(self, name, age): # parameterized constructore
+        self.name = name
+        self.age = age
+        #print('adding new student in Database')
+
+    def welcome(self):
+        print('welcome to new student', self.name)
+
+    def get_age(self):
+        return self.age
+        
+s1 = Student('ali', 32)
+print(s1.name, s1.age, s1.collage_name)
+
+# s2 = Student('ahmad', 7)
+# print(s2.name, s2.age, s2.collage_name)
+
+s1.welcome()
+
+print(s1.get_age())
+
+
+
+
+class Add():
+    def __init__(self, a,b):
+        self.d = a+b
+
+    def __str__(self):
+        return str(self.d)
+        
+
+d = Add(3,5)
+print(d)
+
+
+class ComplexNumber:
+    def __init__(self, real, imag):
+        self.real = real
+        self.imag = imag
+
+    def add(self, other):
+        real_part = self.real + other.real
+        imag_part = self.imag + other.imag
+        return ComplexNumber(real_part, imag_part)
+
+    def subtract(self, other):
+        real_part = self.real - other.real
+        imag_part = self.imag - other.imag
+        return ComplexNumber(real_part, imag_part)
+
+    def __str__(self):
+        sign = '+' if self.imag >= 0 else '-'
+        return f"{self.real} {sign} {abs(self.imag)}j"
+
+
+c1 = ComplexNumber(3, 4)    # 3 + 4i
+c2 = ComplexNumber(1, 42)   # 1 - 2i
+
+sum_result = c1.add(c2)
+sub_result = c1.subtract(c2)
+
+print("Addition:", sum_result)     # Output: 4 + 2i
+print("Subtraction:", sub_result)  # Output: 2 + 6i
+
+
+
+class Student():
+    def __init__(self, name, marks):
+        self.name = name
+        self.marks = marks
+
+    @staticmethod
+    def Hello():
+        print('hello')
+
+
+    def avg(self):
+        sum = 0
+        for i in self.marks:
+            sum += i
+          
+        print('hi' ,self.name, 'ur marks is' ,sum/3 )
+
+
+s1 = Student('ali', [54,48,98])
+s1.avg()
+
+
+s1.name=('ahmad')
+s1.avg()
+
+s1.marks=[34,22,67]
+s1.avg()
+
+s1.Hello()
